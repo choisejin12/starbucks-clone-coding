@@ -1,0 +1,2493 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+}
+
+section{
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* ----- header ------- */
+
+.header-wrap{
+    position: fixed;
+    height: 120px;
+    background-color: #f6f5ef;;
+    width: 100%;
+    border-top: 2px solid black;
+    z-index: 99;
+}
+
+.header-wrap-inner{
+    position: relative;
+    height: 120px;
+    width: 1100px;
+    margin: 0 auto;
+    
+}
+
+.header-logo{
+    position: absolute;
+    height: 180px;
+    width: 180px;
+    top : -20px;
+    left:-40px;
+}
+
+/* 헤더 모바일부분 */
+.mb-header-wrap , .mb-menu-dimm{
+    display: none;
+}
+
+.mb-menu-wrap{
+    display: none;
+    right:-100%;
+    transition: 0.5s;
+}
+/* 헤더 모바일 부분 end*/
+
+.header-logo img{
+    height: 100%;
+    width: 100%;
+}
+
+.header-contentsmenu{
+    position: absolute;
+    display: flex;
+    right : 33px;
+    top:7px;
+}
+
+.header-contentsmenu li{
+    padding:4px;
+    font-size: 14px;
+    font-weight: lighter;
+    cursor: pointer;
+    
+}
+
+.header-contentsmenu li:not(:last-child){
+    margin-right: 18px;
+    margin-top: 10px;
+}
+
+.header-contentsmenu li i{
+    font-size: 25px;
+    background-color: white;
+    padding: 6px;
+    border: 1px solid rgba(82, 77, 77, 0.479);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.header-wrap-inner nav{
+    position:absolute;
+    width:100%;
+    height: 60px;
+    top:50%;
+}
+
+.nav-sub{
+    height: 60px;
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.nav-sub-inner{
+    display: flex;
+    float: right;
+}
+
+.nav-sub ul li h2{
+    font-size: 14px;
+    padding: 8px;
+    height: 56px;
+    cursor: pointer;
+    width: 100%;
+    font-weight:bold;
+    text-align: center;
+    transition: 0.25s;
+}
+
+.nav-sub ul li:hover h2{
+    background-color: #2C2A29;
+    color: green;
+    text-decoration: underline;
+}
+.nav-sub ul li{
+    margin-right: 45px;
+}
+.nav-sub-content {
+    position: absolute;
+    background-color: #2C2A29;
+    width: 100%;
+    left: 0;
+    color: white;
+    top:60px;
+    transform: scaleY(0);
+    transform-origin: 0px 0px;
+    transition: 0.25s;
+    
+}
+.nav-content{
+    float: left;
+}
+
+.nav-content h3{
+    font-size: 15px;
+}
+
+.nav-sub-content li ul li{
+    margin-top: 10px;
+    font-size:11px;
+    color: #999;
+    clear: both;
+    cursor: pointer;
+}
+
+.action{
+    transform: scaleY(1);
+}
+
+.nav-content{
+    padding: 20px;
+}
+
+section{
+   padding-top:120px;
+}
+
+
+/* 헤더 미디어쿼리 */
+@media screen and (max-width: 480px){
+   
+    .header-wrap{
+        display: none;
+    }
+    
+     .mb-header-wrap{
+        position: fixed;
+        background-color: #f6f5ef;
+        width: 100%;
+        display: block;
+        z-index: 20;
+    }
+    .mb-header-inner{
+        position: relative;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .mb-header-logo{
+        position: absolute;
+        top:-25px;
+        width: 100px;
+        height: 100px;
+    }
+    .mb-header-logo img{
+        width: 100%;
+        height: 100%;
+    }
+    
+    .mb-header-inner ul{
+        display: flex;
+        justify-content: flex-end; 
+    }
+    
+    .mb-header-inner ul li{
+        height: 60px;
+        width: 60px;
+        padding: 3px;
+        margin: 10px 0 0 1px;
+        
+    }
+    .mb-header-inner ul li i{
+        font-size: 34px;
+        color: rgba(78, 44, 23, 0.884);
+        cursor: pointer;
+    }
+
+    /* 메뉴 */
+
+    .mb-menu-dimm{
+        display: none;
+        background-color: black;
+        height:100%;
+        width: 100%;
+        opacity: 0.7;
+        position: fixed;
+        top:0;
+        left: 0;
+        z-index: 2000;
+    }
+
+    .mb-menu-wrap{
+        display: block;
+        position: fixed;
+        background-color: #111;
+        z-index: 2001;
+        height: 100%;
+        right: -100%;
+        top:0;
+        width: 70%;
+    }
+
+    .mb-menu-wrap-inner{
+        background: #111;
+        height: 100%;
+        overflow: auto;
+    }
+
+    .mb-menu-wrap-inner aside{
+        position:absolute;
+        top: 17px;
+        left: -38px;
+        cursor: pointer;
+    }
+
+    .mb-menu-wrap-inner aside i{
+        font-size: 30px;
+        color:white;
+    }
+
+    .mb-menu-search{
+        position: relative;
+        background-color: #2d2926;
+        border-bottom: 1px solid #222;
+        height: 70px;
+        width: 100%;
+        border-bottom: 1px solid #222;
+    }
+
+    .mb-menu-search-inner{
+        position: absolute;
+        top: 20px;
+        height: 50px;
+        width: 220px;
+        margin-left: -110px;
+        left: 50%;
+    }
+      
+    .mb-menu-search-inner input[type = "search"]{
+        height: 28px;
+        border: 1px solid #e3e1d2;
+        float: left;
+        border-radius: 3px;
+        width: 140px;
+        outline: none;
+    }
+
+    .mb-menu-search-inner button{
+        background: #666;
+        border-radius: 3px;
+        color: #fff;
+        width: 70px;
+        height: 30px;
+        font-size: 14px;
+        float: right;
+        border:0;
+        font-weight: normal;
+        line-height: 30px;
+        outline: 0;
+        text-align: center;
+    }
+
+    .mb-menu-ti{
+        transition: 1s;
+    }
+    .item1{
+        position: relative;
+        display: list-item;
+        background: #2d2926;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 50px;
+        text-indent: 10px;
+        color: white;
+    }
+
+    .item1~li{
+        display: none;
+        background: #181818;
+        color: white;
+        border-bottom: 1px solid #222;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 50px;
+        text-indent: 15px;
+    }
+
+    .item2{
+        position: relative;
+        background: #111;
+        display: list-item;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 50px;
+        text-indent: 10px;
+        color: white;
+    }
+
+    .item2~li{
+        display: none;
+        background: #181818;
+        color: white;
+        border-bottom: 1px solid #222;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 50px;
+        text-indent: 15px;
+    }
+
+    .mb-menup-menu .fa-chevron-down{
+        position: absolute;
+        height: 12px;
+        margin-top: -6px;
+        right: 20px;
+        top: 50%;
+        
+    }
+
+    .mb-menup-menu .fa-chevron-up{
+        position: absolute;
+        height: 12px;
+        margin-top: -6px;
+        right: 20px;
+        top: 50%;
+    }
+
+    .active{
+        display: list-item !important;
+    }
+
+    .mb-menu-ti:active{
+        text-decoration: underline;
+        background-color:rgb(2, 87, 87);
+    }
+
+}
+
+/* 헤더 미디어쿼리 end */
+
+
+/* Top 메인 */
+
+.TopWrap{
+    position: relative;
+    height: 100% !important;
+    border-top: 2px solid #000;
+}
+
+.floating{
+    position: fixed;
+    top: 154px;
+    left: 54.5%;
+    width: 140px;
+    margin-left: 485px;
+    z-index: 999;
+}
+
+.mb_floating{
+    display: none;
+}
+
+.main-top-wrap{
+    height: 646px;
+    background-image: url('https://image.istarbucks.co.kr/upload/common/img/main/2021/2021_cherryblossom_bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main-top-inner{
+    position: relative;
+    height: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding-top: 59px;
+    box-sizing: border-box;
+}
+
+.main-visual-slogan{
+    max-width: 369px;
+    margin-left: -13px;
+    animation: fadein1 3s;
+}
+.main-visual-slogan img{
+    vertical-align: top;
+    max-width: 100%;
+}
+
+.mb_slogan{
+    display: none;
+}
+.main-btn-slogan , .set_common{
+    position: absolute;
+    
+}
+
+.set_common::after{
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 10;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.mb_drink{
+    display: none;
+}
+
+.set_01{
+    z-index: 18;
+    bottom: 4.4%;
+    left: 28.6%;
+    width: 31%;
+    max-width: 335px;
+    animation: fadein2 2s;
+}
+
+.set_01::after{
+    bottom: 27%;
+    left: -36.6%;
+    width: 55%;
+    max-width: 182px;
+    height: 88px;
+    background-image: url('https://image.istarbucks.co.kr/upload/common/img/main/2021/2021_cherryblossom_chocolate_txt.png');
+}
+
+.set_02{
+    z-index: 17;
+    bottom: 11.3%;
+    left: 54.7%;
+    width: 25%;
+    max-width: 262px;
+    animation: fadein2 3.5s;
+}
+
+.set_02::after{
+    bottom: 105.4%;
+    left: 1.4%;
+    width: 77%;
+    max-width: 201px;
+    height: 89px;
+    background-image: url(https://image.istarbucks.co.kr/upload/common/img/main/2021/2021_cherryblossom_coldbrew_txt2.png);
+}
+
+.set_03{
+    z-index: 16;
+    bottom: 7%;
+    right: -0.9%;
+    width: 25%;
+    max-width: 268px;
+    animation: fadein2 4.5s;
+
+}
+
+.set_03::after{
+    bottom: 104%;
+    left: 3%;
+    width: 82%;
+    max-width: 220px;
+    height: 89px;
+    background-image: url('https://image.istarbucks.co.kr/upload/common/img/main/2021/2021_cherryblossom_blended_txt.png');
+}
+
+.main-btn-slogan{
+    width: 125px;
+    height: 38px;
+    z-index: 19;
+    left: 10%;
+    margin-top: 32px;
+    animation: fadein2 5.5s;
+}
+
+.main-btn-slogan a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    border: 2px solid white;
+    font-size: 15px;
+    line-height: 34px;
+    border-radius: 5px;
+    text-align: center;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+.main-btn-slogan a:hover{
+    color: white;
+    background-color: rgb(196, 112, 33);
+    border: 2px solid rgba(196, 112, 33);
+}
+
+@keyframes fadein1 {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+
+@keyframes fadein2 {
+    0% {
+        opacity:0;
+    }
+
+    30% {
+        opacity:0;
+    }
+
+    90%{
+        opacity:1;
+    }
+}
+
+/* Top 메인 END */
+
+/* Top 메인 notice */
+
+.line-notice{
+    position: relative;
+    width: 100%;
+    height: 62px;
+}
+
+.line-notice-left{
+    position: absolute;
+    height: 62px;
+    width: 50%;
+    background: #111;
+    left: 0;
+    top: 0;
+}
+
+.line-notice-right{
+    position: absolute;
+    height: 62px;
+    width: 50%;
+    background: #f6f5ef;
+    right: 0;
+    top: 0;
+}
+
+.line-notice-bg{
+    position: absolute;
+    top: 0;
+    background: url(https://image.istarbucks.co.kr/common/img/main/line_notice_bg.jpg);
+    height: 62px;
+    left: 50%;
+    margin-left: -640px;
+    width: 1280px;
+}
+
+
+.line-notice-bgl{
+    float: left;
+    height: 62px;
+    width: 730px;
+}
+
+.line-notice-bgr{
+    position: relative;
+    float: right;
+    height: 62px;
+    width: 550px;
+    z-index: 10;
+}
+
+.line-notice-bgr div{
+    position: absolute;
+    height: 36px;
+    left: 37%;
+    top: 13px;
+    width: 234px;
+}
+
+.line-notice-bgr div span{
+    position: absolute;
+    height: 35px;
+    right: 0px;
+    top: 0px;
+    width: 35px;
+    cursor: pointer;
+}
+
+.line-notice-bgr div p{
+    position: absolute;
+    background: url(https://image.istarbucks.co.kr/common/img/common/prom_ttl_b.png) no-repeat;
+    background-size: 100% auto;
+    height: 17px;
+    left: 0;
+    top: 9px;
+    width: 129px;
+    overflow: hidden;
+    text-indent: -20000px;
+    cursor: pointer;
+}
+
+.line-notice-inner{
+    float: left;
+    height: 36px;
+    margin: 13px 0 0 89px;
+    width: 621px;
+}
+
+.line-notice-inner-r{
+    position: relative;
+    float: right;
+    height: 36px;
+    width: 36px;
+    cursor: pointer;
+}
+
+.line-notice-inner-r img{
+    position: relative;
+    background-size: 35px;
+    height: 36px;
+    left: 0;
+    top: 0;
+    width: 36px;
+}
+
+.line-notice-inner-l{
+    position: relative;
+    float: left;
+    height: 33px;
+    width: 494px;
+}
+
+.notice_ttl{
+    position: absolute;
+    height: 17px;
+    left: 0;
+    top: 10px;
+    width: 65px;
+}
+
+.line-notice-inner-l dd{
+    position: absolute;
+    left: 65px;
+    top: 9px;
+    width: 520px;
+    height: 24px;
+    text-indent: 15px;
+    overflow: hidden;
+}
+
+.line-notice-inner-l dd ul{
+    direction: ltr;
+    font-size: 13px;
+    color: rgb(255, 255, 255);
+}
+
+.line-notice-inner-l dd ul li{
+    height: 24px;
+    line-height: 24px;
+    font-weight: bold;
+    display: none;
+    transition: all 4s ease;
+}
+
+.news_result .animated{
+    display: block;
+}
+
+.main_prom_bnr{
+    display: none;
+    position: relative;
+    background: #f6f5ef;
+    border-top: 1px solid #f6f5ef;
+    height: 0px;
+    width: 100%;
+    z-index: 10;
+    overflow: hidden;
+    animation: main_prom2 1.5s;
+}
+
+.action2{
+    display: block;
+    height: 658px;
+    animation: main_prom 1.5s;
+}
+
+.main_prom_bnr_inner{
+    position: relative;
+    left: 50%;
+    text-align: center;
+    height: 553px;
+    margin-top: 39px;
+    margin-left: -550px;
+    width: 1100px;
+}
+
+
+@keyframes main_prom {
+    0% {
+        height: 0px;
+    }
+
+    to{
+        height: 658px;
+    }
+    
+}
+
+@keyframes main_prom2 {
+    from{
+        height: 658px;
+    }
+
+    to {
+        height: 0px;
+    }
+
+    
+}
+
+.main_slide_controler{
+    position: absolute;
+    bottom: -30px;
+    height: 12px;
+    text-align: center;
+    width: 100%;
+    z-index: 9999;
+}
+
+.bx-wrapper{
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto 60px;
+    padding: 0;
+
+}
+
+.bx-viewport{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 80px;
+    
+}
+
+.slider_container{
+    position: absolute;
+    width:100%;
+    left:0;
+}
+
+.bx-wrapper .animated {
+	-webkit-transition: left .3s ease-in;
+	transition: left .3s ease-in;
+}
+
+.slider_container li{
+    position: absolute;
+	width: 100%;
+	padding:0 10%;
+	box-sizing:border-box;
+	top: 50%;
+	text-align: center;
+	overflow: hidden;
+    filter: blur(5px);
+    transition: 2.5s;
+}
+
+.filter{
+    filter: none !important;
+}
+
+.slider_containert li img{
+    position: relative;
+    max-width: 100%;
+}
+
+.slider_container li a{
+    position: relative;
+    border: 2px solid #222;
+    text-decoration: none;
+    border-radius: 3px;
+    color: #222;
+    display: block;
+    font-size: 14px;
+    height: 34px;
+    line-height: 34px;
+    margin: -50px auto 0;
+    text-align: center;
+    width: 121px;
+    transition: background-color .7s, color .7s;
+}
+
+.slider_container li a:hover{
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+
+.main_prevBtn{
+    position: absolute;
+    left: 3%;
+    top: 225px;
+    z-index: 2001;
+}
+
+.main_NextBtn{
+    position: absolute;
+    right: 3%;
+    top: 225px;
+    z-index: 2001;
+    
+}
+
+.main_prevBtn img,
+.main_NextBtn img{
+    padding: 16px 22px;
+    border: 2px solid #222;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+
+.main_slide_control{
+    display: inline-block;
+    height: 12px;
+    position: relative;
+    width: 9px;
+    top: -10px;
+}
+.main_slide_control_inner{
+    position: absolute;
+}
+.main_slide_control_inner img{
+    height: 12px;
+    width: 9px;
+}
+
+.main_slide_pagers {
+    display: inline-block;
+}
+.main_slide_pagers span{
+    width: 10px;
+    height: 10px
+    ;background:#ccc;
+    border-radius:50%; 
+    display: inline-block; 
+    text-indent: -9999em;
+    margin:0 5px;
+}
+.active2{
+    background: #333 !important;
+}
+
+/* Topmain 미디어쿼리 */
+
+@media screen and (max-width: 480px){
+
+    section{
+        padding-top: 88px;
+
+    }
+    .floating{
+        left: auto;
+        width: 25.7%;
+        right: 1.8%;
+    }
+
+    .floating-inner{
+        width: 100%;
+        height: 100%;
+    }
+
+    .pc_floating{
+        display: none;
+    }
+    .mb_floating{
+        display: block;
+        width: 100%;
+    }
+
+    .main-top-wrap{
+        height: 302.5vw;
+        min-width: 320px;
+        background-image: url('https://image.istarbucks.co.kr/upload/common/img/main/2021/m_2021_cherryblossom_bg.jpg');
+    }
+
+    .main-top-inner{
+        padding-top: 21.3%;
+    }
+
+    .main-visual-slogan{
+        max-width: 399px;
+        width: 62.6%;
+        margin-left: 4.6%;
+        margin-top: -0.9%;
+    }
+
+    .pc_slogan{
+        display: none;
+    }
+
+    .mb_slogan{
+        display: block;
+    }
+
+    .main-btn-slogan{
+        left: 50% !important;
+        width: 115px;
+        height: 34px;
+        margin-left: -57.5px;
+        bottom: 5%;
+        margin-top: 23px;
+    }
+
+    .main-btn-slogan a{
+        font-size: 13px;
+        line-height: 30px;
+    }
+
+    .pc_drink{
+        display: none;
+    }
+
+    .mb_drink{
+        display: block;
+    }
+
+    .set_common img{
+        width: 100%;
+    }
+    
+    .set_01{
+        top: 18.8%;
+        left: 4.5%;
+        width: 58.8%;
+        bottom: auto;
+        max-width: none;
+    }
+
+    .set_01::after{
+        background-image: url('https://image.istarbucks.co.kr/upload/common/img/main/2021/m_2021_cherryblossom_chocolate_txt.png');
+        left: 78.7%;
+        width: 54%;
+        height: 67px;
+        bottom: 43%;
+    }
+
+    .set_02{
+        top: 41.9%;
+        right: 0.2%;
+        left: auto;
+        width: 48%;
+        bottom: auto;
+        max-width: none;
+    }
+
+    .set_02::after{
+        background-image: url('https://image.istarbucks.co.kr/upload/common/img/main/2021/m_2021_cherryblossom_coldbrew_txt.png');
+        bottom: 38.8%;
+        left: -74%;
+        width: 74.7%;
+        height: 70px;
+    }
+
+    .set_03{
+        right: auto;
+        bottom: 11.4%;
+        left: 8.2%;
+        width: 54.5%;
+        max-width: none;
+    }
+
+    .set_03::after{
+        background-image: url('https://image.istarbucks.co.kr/upload/common/img/main/2021/m_2021_cherryblossom_blended_txt.png');
+        bottom: 45.7%;
+        left: 74.4%;
+        width: 73.4%;
+        height: 69px;
+
+    }
+    .line-notice{
+        height: 140px;
+    }
+
+    .line-notice-left{
+        height: 70px;
+        width: 100%;
+    }
+
+    .line-notice-right{
+        height: 70px;
+        top: 70px;
+        width: 100%;
+    }
+    
+    .line-notice-bg{
+        background: none;
+        height: 70px;
+        width: 100%;
+        left:0;
+        margin: 0;
+    }
+
+    .line-notice-bgl{
+        height: 70px;
+        width: 100%;
+    }
+
+    .line-notice-bgr{
+        height: 70px;
+        width: 100%;
+    }
+    
+    .line-notice-inner{
+        height: 40px;
+        margin: 15px 0 0 5px;
+        width: 90%;
+    }
+
+    .line-notice-inner-l{
+        height: 40px;
+        width: 85%;
+    }
+
+    .line-notice-inner-r{
+        height: 40px;
+        width: 40px;
+    }
+
+    .notice_ttl{
+        background: url('https://image.istarbucks.co.kr/common/img/common/icon_board_speaker.png') center center no-repeat ;
+        height: 32px;
+        top: 5px;
+        background-size: 33px 32px;
+        text-indent: -2000000000px;
+    }
+
+    .notice_ttl img{
+        vertical-align: top;
+        max-width: 100%;
+    }
+
+    .line-notice-inner-l dd{
+        width: 400px;
+        overflow: hidden;
+    }
+
+
+    .line-notice-bgr div{
+        height: 40px;
+        left: 50%;
+        margin-left: -100px;
+        top: 14px;
+        width: 199px;
+    }
+
+    
+    .line-notice-bgr div p{
+        background-size: 100% auto;
+        height: 18px;
+        left: 0;
+        top: 12px;
+        width: 143px;
+    }
+
+    .line-notice-bgr div span{
+        height: 30px;
+        right: 0px;
+        top: 4px;
+        width: 30px;
+    }
+
+    .main_prom_bnr{
+        height: 370px;
+    }
+
+    .main_prom_bnr_inner{
+        height: 370px;
+        margin-top: 25px;
+        margin-left: -49%;
+        width: 98%;
+    }
+    
+    .main_slide_controler{
+        bottom: 50px;
+    }
+
+    .main_NextBtn , .main_prevBtn{
+        display: none;
+    }
+
+    .bx-wrapper{
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        height: 291px;
+    }
+
+    .slider_container li{
+        width: 368px;
+    }
+
+    .slider_container li img{
+        max-width: 100%;
+    }
+
+    .slider_container li a{
+        margin: 2px auto 0;
+    }
+
+
+    @keyframes main_prom {
+        0% {
+            height: 0px;
+        }
+    
+        to{
+            height: 375px;
+        }
+        
+    }
+    
+    @keyframes main_prom2 {
+        from{
+            height: 375px;
+        }
+    
+        to {
+            height: 0px;
+        }
+    
+        
+    }
+
+    .slider_container li{
+        padding: 0;
+    }
+   
+}
+
+/* Topmain 미디어쿼리 end*/
+
+/* new-rewards 메인 */
+
+.mb-br{
+    display: none;
+}
+
+.new-rewards_wrap{
+    padding-top: 30px;
+    padding-bottom: 40px;
+    background-color: #1e3932;
+}
+
+.new-rewards_wrap a{
+    color: white;
+    text-decoration: none;
+}
+
+.new-rewards_inner{
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.new-rewards_logo{
+    
+    width: 16.3%;
+    margin-left: 40px;
+    margin-right: 40px;
+    text-align: center;
+}
+
+.new-rewards_logo img{
+    width: 176px;
+}
+
+.new-rewards_contents{
+   
+    box-sizing: border-box;
+    width: calc(83.7% - 80px);
+    padding-right: 30px;
+    color: #fff;
+}
+
+.new-rewards_contents .conte_info{
+    position: relative;
+    margin-bottom: 22px;
+    border-bottom: 1px solid #4b615b;
+}
+
+.info-content{
+    margin-bottom: 12px;
+}
+
+.info-signup{
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+}
+
+.conte_gift{
+    position: relative;
+}
+
+.gift-content p{
+    line-height: 1.4;
+    font-size: 14px;
+}
+.gift-egift{
+    position: absolute;
+    box-sizing: border-box;
+    top: 0;
+    right: 0;
+    width: 183px;
+    height: 38px;
+    line-height: 36px;
+    text-align: center;
+    font-size: 14px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+}
+
+.info-content h2{
+    line-height: 1.4;
+    margin-bottom: 12px;
+    font-size: 26px;
+    font-weight: normal;
+}
+
+.info-content p{
+    line-height: 1.4;
+    font-size: 17px;
+}
+
+.info-signup a{
+    box-sizing: border-box;
+    display: inline-block;
+    height: 38px;
+    line-height: 36px;
+    padding-left: 18.5px;
+    padding-right: 18.5px;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-signin_login{
+    margin-left: 9px;
+    background-color: transparent;
+    border: 2px solid #fff;
+}
+
+.btn-signin_join{
+    background-color: #00704a;
+    border: 2px solid #00704a;
+}
+
+.mb_bean{
+    display: none;
+}
+
+.main-bean_wrap{
+    height: 573px;
+    background-image: url(https://image.istarbucks.co.kr/upload/common/img/main/2021/2021_cherryblossom_bean_bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.bean-inner{
+    position: relative;
+    max-width: 1080px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.bean_img_box , .bean_text_box{
+    position: absolute;
+}
+
+.bean_img_box{
+    top: 7.8%;
+    max-width: 720px;
+    width: 67%;
+    left:-100%;
+    transition: ease-out 4s;
+}
+
+.bean_text_box{
+    top: 32.6%;
+    max-width: 300px;
+    width: 28%;
+    right: -100%;
+    transition: ease-out 4s;
+    
+}
+
+
+.btn_bean_detail{
+    width: 125px;
+    height: 38px;
+    z-index: 6;
+    margin: 30px 2px 0 0;
+}
+
+.btn_bean_detail a{
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 15px;
+    line-height: 34px;
+    border-radius: 5px;
+    text-align: center;
+    box-sizing: border-box;
+    font-weight: bold;
+    color: #231815;
+    border: 2px solid #231815;
+    transition: 0.55s;
+}
+
+.btn_bean_detail a:hover{
+    background-color: black;
+    color:white;
+    text-decoration: underline;
+}
+
+/* new-rewards 메인 end*/
+
+
+/* new-rewards 미디어쿼리 */
+
+@media screen and (max-width: 480px){
+
+    .new-rewards_wrap{
+        padding-top: 40px;
+        padding-bottom: 50px;
+    }
+
+    .new-rewards_inner{
+        flex-direction: column;
+    }
+    .new-rewards_logo{
+        width: 40%;
+        margin: 0 auto 35px;
+    }
+
+    .new-rewards_logo img{
+        min-width: 124px;
+        width: auto;
+        max-width: 100%;
+    }
+
+    .new-rewards_contents{
+        padding-right: 0;
+        text-align: center;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .info-content h2{
+        line-height: 1.4;
+        font-size: 20px;
+    }
+
+    .info-content p{
+        line-height: 1.7;
+        font-size: 14px;
+    }
+    .info-signup{
+        display: inline-block;
+        position: static;
+        top: auto;
+        bottom: auto;
+        width: 80%;
+        right: auto;
+        margin-bottom: 20px;
+    }
+    .gift-egift{
+        display: inline-block;
+        position: static;
+        top: auto;
+        bottom: auto;
+        right: auto;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        width: 80%;
+        border-radius: 3px;
+    }
+    .gift-content{
+        line-height: 1.7;
+    }
+
+    .pc-br{
+        display: none;
+    }
+
+    .mb-br{
+        display: block;
+    }
+
+    .main-bean_wrap{
+        height: 812px;
+        background-image: url(https://image.istarbucks.co.kr/upload/common/img/main/2021/2021_m_summer1_bean_bg.jpg);
+        background-position: center;
+    }
+
+    .bean-inner{
+        max-width: none;
+    }
+
+    .bean_img_box img , .bean_text_box img{
+        width: 100%;
+    }
+
+    .bean_img_box{
+        top: 17.4%;
+        width: 350px;
+        margin-left: 16%;
+        max-width: none;
+        margin-right: auto;
+        left: -100%;
+    }
+
+    .bean_text_box{
+        top: 65%;
+        right: auto;
+        bottom: 9.8%;
+        width: 65%;
+    }
+
+    .pc_bean{
+        display: none;
+    }
+
+    .mb_bean{
+        display: block;
+    }
+
+    .btn_bean_detail{
+        margin: 20% auto 0;
+        width: 115px;
+        height: 34px;
+    }
+
+    .btn_bean_detail a{
+        font-size: 13px;
+        line-height: 30px;
+    }
+
+    .moving .bean_img_box{
+        left: 0px !important;
+    }
+
+    .moving .bean_text_box{
+        right: 18.8% !important;
+    }
+
+}
+
+/* new-rewards 미디어쿼리 END*/
+
+/* reserve 부분 */
+
+.reserve_visual-m{
+    display: none;
+}
+
+.reserve_wrap{
+    position: relative;
+    height: 400px;
+    background: url(https://image.istarbucks.co.kr/upload/common/img/main/2021/reserve_sundried_brazil_bg2.jpg) no-repeat center top;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.reserve_inner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.reserve_inner::before{
+    display: block;
+    position: absolute;
+    top: 47px;
+    left: 0;
+    width: 214px;
+    height: 130px;
+    background: url(https://image.istarbucks.co.kr/upload/common/img/main/2021/reserve_sundried_brazil_bg_shape.png) no-repeat left top;
+    content: '';
+}
+
+.reserve_title{
+    position: relative;
+    z-index: 10;
+    padding-top: 94px;
+    max-width: 1080px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box;
+}
+
+.reserve_title img .reserve_visual img{
+    width: auto;
+}
+
+.reserve_visual{
+    display: block;
+    position: absolute;
+    right: -3%;
+    bottom: 0;
+    opacity: 0;
+    transition: ease 5s;
+}
+
+.reserve_detail-btn_wrap{
+    position: relative;
+    z-index: 10;
+    max-width: 1080px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 268px;
+    box-sizing: border-box;
+}
+
+.reserve_detail-btn{
+    width: 125px;
+    height: 38px;
+}
+
+.reserve_detail-btn a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: #815932;
+    font-size: 15px;
+    line-height: 34px;
+    text-align: center;
+    border: 2px solid #815932;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: background-color .7s, color .7s, border-color .7s;
+}
+
+.reserve_detail-btn a:hover{
+    background-color: #815932;
+    color: white;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* reserve 부분 END*/
+
+
+/* reserve 부분 미디어 쿼리 */
+
+@media screen and (max-width: 480px){
+    
+    .reserve_wrap{
+        height: 100%;
+    }
+
+    .reserve_title{
+        max-width: none;
+        width: 46%;
+        margin-right: 0;
+        margin-left: 0;
+        padding-top: 60px;
+        padding-left: 25px;
+        display: none !important;
+    }
+
+    .reserve_visual-m{
+        display: block;
+    }
+
+    .reserve_visual-pc{
+        display: none;
+    }
+
+    .reserve_visual{
+        position: relative !important;
+        bottom: 0;
+        right: auto;
+        width: 100%;
+        
+    }
+
+    .reserve_visual img{
+        max-width: none;
+        width: 100%;
+    }
+
+    .reserve_detail-btn_wrap{
+        position: static;
+        width: auto;
+        margin-top: 0;
+        padding-left: 0;
+        max-width: none;
+        margin-left: 0;
+    }
+
+    .reserve_detail-btn{
+        position: absolute;
+        z-index: 10;
+        bottom: 8%;
+        left: 50%;
+        margin-left: -55.4px;
+        width: 115px;
+        height: 34px;
+        line-height: 32px;
+        margin-top: 0;
+    }
+
+    .reserve_detail-btn a{
+        font-size: 13px;
+        line-height: 30px;
+    }
+}
+
+/* reserve 부분 미디어 쿼리 END*/
+
+
+/* winter 부분  */
+
+.winter_fav_wrap{
+    background: url('https://image.istarbucks.co.kr/common/img/main/fav_prod_bg_new.jpg') center center fixed no-repeat #45434c;
+    background-size: auto 100%;
+    height: 800px;
+    padding: 0;
+    position: relative;
+}
+
+.winter_fav_inner{
+    left: 50%;
+    margin-left: -640px;
+    position: absolute;
+    top: 0;
+    width: 1280px;
+    bottom: 0;
+}
+
+.fav_prod_txt01{
+    background: url('https://image.istarbucks.co.kr/common/img/main/fav_prod_txt01.png') no-repeat;
+    height: 204px;
+    overflow: hidden;
+    position: absolute;
+    text-indent: -20000px;
+    top: 120px;
+    width: 258px;
+    z-index: 7;
+    opacity: 0;
+    left: -700px;
+    transition: ease 2s;
+}
+
+.fav_prod_txt02{
+    background: url('https://image.istarbucks.co.kr/common/img/main/fav_prod_txt02.png') no-repeat;
+    height: 156px;
+    overflow: hidden;
+    position: absolute;
+    text-indent: -20000px;
+    top: 370px;
+    width: 362px;
+    z-index: 7;
+    opacity: 0;
+    left: -700px;
+    transition: ease 2s;
+}
+
+.fav_img{
+    position: absolute;
+    background-size: 100% !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 7;
+    top: 100px;
+    right: -10px;
+    width: 672px;
+    height: 458px;
+    background-image: url('https://image.istarbucks.co.kr/upload/common/img/main/2021/2021_summer1_fav.png');
+}
+
+.btn_fav_prod{
+    border: 2px solid #fff;
+    border-radius: 3px;
+    height: 34px;
+    left: 328px;
+    position: absolute;
+    top: 570px;
+    width: 121px;
+    z-index: 7;
+    width: 125px;
+    height: 38px;
+    border-width: 0;
+    opacity: 0;
+    transition: ease 2s;
+}
+
+.btn_fav_prod a{
+    color: #fff;
+    display: block;
+    font-size: 14px;
+    height: 100%;
+    line-height: 34px;
+    text-align: center;
+    width: 100%;
+    -webkit-transition: background-color .7s, color .7s;
+    transition: background-color .7s, color .7s;
+    font-size: 15px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.btn_fav_prod a:hover{
+    background-color: white;
+    color: black;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* winter 부분 END */
+
+/* winter 부분  미디어쿼리*/
+
+@media screen and (max-width: 480px){
+    .winter_fav_wrap{
+        background: url('https://image.istarbucks.co.kr/common/img/main/mob_fav_prod_bg_new.jpg') center -3px no-repeat #16151b;
+        background-size: auto 100%;
+        height: 700px;
+        padding: 0;
+        position: relative;
+        width: 100%;
+    }
+
+    .fav_prod_txt01{
+        background: url('https://image.istarbucks.co.kr/common/img/main/mobile_menu_txt01.png') no-repeat;
+        background-size: 100% auto;
+        height: 72px;
+        left: 50% ;
+        margin-left: -125px;
+        position: absolute;
+        /*top: 410px;*/
+        top: 300px;
+        width: 250px;
+        z-index: 7;
+        transition: ease 2s;
+    }
+
+    .fav_prod_txt02{
+        background: url('https://image.istarbucks.co.kr/common/img/main/mobile_menu_txt02.png') no-repeat;
+        background-size: 100% auto;
+        height: 129px;
+        left: 50% !important;
+        margin-left: -150px;
+        position: absolute;
+        top: 390px;
+        /*top: 490px;*/
+        width: 300px;
+        z-index: 7;   
+        transition: ease 2s;
+    }
+
+    .fav_img{
+        position: static;
+        top: auto;
+        right: auto;
+        width: 320px;
+        height: 264px;
+        margin: 90px auto 0;
+    }
+
+    .btn_fav_prod{
+        width: 115px;
+        height: 34px;
+        line-height: 32px;
+        margin-top: 0;
+        left: 50%;
+        margin-left: -60px;
+        top: 600px;
+        transition: ease 2s;
+    }
+
+    .btn_fav_prod a{
+        font-size: 13px;
+        line-height: 30px;
+    }
+}
+
+/* winter 부분  미디어쿼리 END*/
+
+/* reserve3 부분 */
+
+.reserve3Wrap{
+    position: relative;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.reserve3_pc{
+    position: relative;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding-top: 90px;
+    padding-bottom: 90px;
+    font-size: 0;
+}
+
+.look-detail_btn{
+    position: absolute;
+    bottom: 31.5%;
+    width: 287px;
+    height: 17px;
+    margin-left: calc(50% - 30px);
+    text-indent: -9999px;
+    transition: background-color .8s;
+    transition: ease 2s;
+}
+
+.reserve3_pc > div{
+    display: inline-block;
+    vertical-align: top;
+}
+
+.reserve_left{
+    position: relative;
+    width: 38.5%;
+    padding-left: 3.5%;
+}
+
+.reserve_right{
+    width: 45.6%;
+    margin-left: 6%;
+    padding-right: 3.5%;
+}
+
+.reserve_right img{
+    position: relative;
+    margin-top: 32%;
+    transition: ease 2s;
+}
+
+.reserve3_pc::before{
+    content: "";
+    position: absolute;
+    top: 61.8%;
+    left: 9.5%;
+    width: 95.3%;
+    height: 1px;
+    background-color: #cccccb;
+}
+
+.reserve3_pc::after{
+    content: "";
+    position: absolute;
+    left: 44%;
+    top: 136px;
+    width: 1px;
+    height: 64%;
+    background-color: #cccccb;
+}
+
+.look-detail_btn a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://image.istarbucks.co.kr/upload/common/img/main/2020/btn_magazine_pc.png);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+
+}
+
+.look-detail_btn:hover{
+    background-color: rgba(204, 122, 15, 0.856);
+}
+
+.reserve3_mobile{
+    display: none;
+}
+/* reserve3 부분 END */
+
+/* reserve3 부분  미디어쿼리 */
+
+@media screen and (max-width: 480px){
+    .reserve3_mobile{
+        display: block;
+    }
+    .reserve3_pc{
+        display: none;
+    }
+
+    .reserve3_mobile{
+        display: block;
+        margin-top: 13%;
+    }
+
+    .reserve3_mobile-top{
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .reserve3_mobile-top img{
+        width: 100%;
+    }
+
+    .reserve3_mobile-bottom{
+        position: relative;
+        /*bottom:0px*/
+        bottom: -100px;
+        width: 81%;
+        margin: 15.7% auto 0;
+        transition: ease 2s;
+    }
+
+    .reserve3_mobile-bottom img{
+        width: 100%;
+    }
+
+    .look-detail_btn{
+        position: static;
+        display: block;
+        width: 171.5px;
+        margin: 5% auto 13% !important;
+    }
+
+    .look-detail_btn a{
+        background-image: url(https://image.istarbucks.co.kr/upload/common/img/main/2020/btn_magazine_mobile.png);
+        background-position: 0 0;
+        background-size: 100%;
+    }
+
+}
+/* reserve3 부분  미디어쿼리 END*/
+
+/* STORE WRAP 부분*/
+
+.storeWrap{
+    background: url('https://image.istarbucks.co.kr/common/img/main/store_bg.jpg');
+    background-size: 100% auto;
+    height: 400px;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.wrap_inner{
+    left: 50%;
+    margin-left: -640px;
+    position: absolute;
+    top: 0;
+    width: 1280px;
+}
+
+
+.store_exp_img01{
+    background: url('https://image.istarbucks.co.kr/common/img/main/store_exp_img01.png');
+    height: 228px;
+    left: 390px;
+    position: absolute;
+    top: 149px;
+    width: 228px;
+    z-index: 5;
+    transition: ease 4s;
+}
+
+.store_exp_img02{
+    background: url('https://image.istarbucks.co.kr/common/img/main/store_exp_img02.png');
+    height: 312px;
+    left: 160px;
+    position: absolute;
+    top: 0;
+    width: 366px;
+    z-index: 4;
+    transition: ease 4s;
+}
+
+.store_exp_img03{
+    background: url('https://image.istarbucks.co.kr/common/img/main/store_exp_img03.png');
+    height: 142px;
+    left: 520px;
+    position: absolute;
+    top: -60px;
+    width: 343px;
+    z-index: 4;
+    transition: ease 4s;
+}
+
+.store_exp_img04{
+    background: url('https://image.istarbucks.co.kr/common/img/main/store_exp_img04.png');
+    height: 102px;
+    position: absolute;
+    right: 30px;
+    top: 298px;
+    width: 230px;
+    z-index: 4;
+    transition: ease 4s;
+}
+
+.store_txt01{
+    background: url('https://image.istarbucks.co.kr/common/img/main/store_txt01.png');
+    height: 54px;
+    position: absolute;
+    /*right: 149px;*/
+    overflow: hidden;
+    text-indent: -20000px;
+    top: 100px;
+    width: 385px;
+    z-index: 4;
+    transition: ease 4s;
+}
+
+.store_txt02{
+    background: url('https://image.istarbucks.co.kr/common/img/main/store_txt02.png');
+    height: 61px;
+    position: absolute;
+    /*right: 168px;*/
+    overflow: hidden;
+    text-indent: -20000px;
+    top: 168px;
+    width: 366px;
+    z-index: 4;
+    transition: ease 4s;
+}
+
+.store_btn{
+    border: 2px solid #222;
+    border-radius: 3px;
+    height: 34px;
+    line-height: 34px;
+    position: absolute;
+    /*right: 402px;*/
+    top: 258px;
+    width: 121px;
+    z-index: 4;
+    transition: ease 4s;
+}
+
+.store_btn a{
+    color: #222;
+    display: block;
+    height: 100%;
+    text-align: center;
+    width: 100%;
+    -webkit-transition: background-color .7s, color .7s;
+    transition: background-color .7s, color .7s;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.store_btn a:hover{
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    text-decoration: underline;
+    
+}
+
+/* STORE WRAP 부분 END*/
+
+/* STORE WRAP 부분 미디어쿼리*/
+@media screen and (max-width: 480px){
+
+    .storeWrap{
+        background: url('https://image.istarbucks.co.kr/common/img/main/store_bg.jpg');
+        background-size: 100% auto;
+        height: 750px;
+        position: relative;
+        width: 100%;
+    }
+
+    .store_exp_img01{
+        background-size: 100% auto;
+        height: 168px;
+        left: 610px;
+        width: 170px;
+    }
+
+    .store_exp_img02{
+        background-size: 100% auto;
+        height: 204px;
+        left: 470px;
+        width: 240px;
+    }
+
+    .store_exp_img03{
+        background-size: 100% auto;
+        height: 73px;
+        left: 480px;
+        top: 240px;
+        width: 180px;
+    }
+
+    .store_exp_img04{
+        background-size: 100% auto;
+        height: 75px;
+        left: 620px;
+        top: 675px;
+        width: 170px;
+    }
+
+    .store_txt01{
+        background: url('https://image.istarbucks.co.kr/common/img/main/mobile_store_txt01.png');
+        background-size: 100% auto;
+        height: 71px;
+        left: 50%;
+        margin-left: -140px;
+        position: absolute;
+        top: 350px;
+        width: 280px;
+        z-index: 4;
+    }
+
+    .store_txt02{
+        background: url('https://image.istarbucks.co.kr/common/img/main/mobile_store_txt02.png');
+        background-size: 100% auto;
+        height: 71px;
+        left: 50%;
+        margin-left: -150px;
+        position: absolute;
+        top: 450px;
+        width: 300px;
+        z-index: 4;
+    }
+
+    .store_btn{
+        border: 2px solid #222;
+        border-radius: 3px;
+        height: 34px;
+        left: 50%;
+        line-height: 34px;
+        margin-left: -62px;
+        position: absolute;
+        top: 560px;
+        width: 121px;
+        z-index: 4;
+    }
+
+    .store_btn a{
+        color: #222;
+        display: block;
+        height: 100%;
+        text-align: center;
+        width: 100%;
+        font-weight: bold;
+    }
+}
+/* STORE WRAP 부분 미디어쿼리END*/
+
+
+/* footer 부분 */
+
+footer{
+    background: #2C2A29;
+    clear: both;
+    position: relative;
+    width: 100%;
+    padding: 32px 0 35px 0;
+}
+
+.footer_wrap{
+    background: url('https://image.istarbucks.co.kr/common/img/footer/footer_logo.png') right 8px no-repeat;
+    display: inline-block;
+    left: 50%;
+    position: relative;
+    margin-left: -550px;
+    width: 1100px;
+   
+}
+
+.footer_first_menu , .footer_util_btn{
+    display: none;
+}
+.footer_menus ul{
+    float: left;
+    width: 220px;
+}
+.footer_menus li{
+    width: 100%;
+    color: #fff;
+    font-size: 12px;
+    line-height: 24px;
+}
+
+.footer_menu_ttl{
+    font-size: 14px !important;
+    line-height: 40px;
+}
+
+.footer_awards_wrap{
+    background: #282828;
+    position: relative;
+    width: 100%;
+    height: 80px;
+    margin-top: 40px;
+}
+
+.footer_awards_wrap_inner{
+    left: 50%;
+    position: absolute;
+    height: 64px;
+    margin-left: -567px;
+    top: 8px;
+    width: 1134px;
+}
+
+.footer_awards_wrap_inner ul{
+    display: inline-block;
+}
+.footer_awards_wrap_inner ul li{
+    position: relative;
+    width: 189px;
+    float: left;
+}
+
+.copyright{
+    left: 50%;
+    position: relative;
+    color: #999;
+    font-size: 12px;
+    line-height: 18px;
+    margin-left: -50%;
+    padding-top: 30px;
+    text-align: center;
+    width: 100%;
+}
+
+.c_00b050{
+    color: #00b050 !important;
+    font-weight: bold;
+    
+}
+
+.copyright a{
+    border-right: 1px solid #393939;
+    color: #ccc;
+    font-size: 12px;
+    padding: 0 10px;
+    text-decoration: none;
+}
+
+.copyright .last{
+    border: none;
+}
+
+.copyright .btned_link{
+    background: none;
+    border: 2px solid #fff;
+    border-radius: 3px;
+    color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    margin: 10px 2px 0 3px;
+    width: 90px;
+    height: 30px;
+    line-height: 30px;
+    box-sizing: content-box;
+}
+
+.copy_menu{
+    padding: 25px 0 5px 0;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.copy_menu li{
+    line-height: 1.3;
+    display: inline-block;
+    margin: 0 7px;
+}
+
+.copyright span{
+    display: inline-block;
+    line-height: 40px;
+}
+
+/* footer 부분 END*/
+
+/* footer 부분 미디어쿼리*/
+
+@media screen and (max-width: 480px){
+    footer{
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .footer_wrap{
+        background: #554c46;
+        left: 0;
+        margin-left: 0;
+        padding: 0 0 0 0;
+        width: 100%;
+    }
+
+    .footer_util_btn{
+        display: block;
+    }
+
+    .footer_awards_wrap{
+        height: 80px;
+        margin-top: 40px;
+    }
+
+    .copyright{
+        color: #999;
+        font-size: 12px;
+        line-height: 24px;
+        margin-left: -155px;
+        padding-top: 30px;
+        text-align: center;
+        width: 310px;
+    }
+
+    .footer_first_menu{
+        display: block;
+        border-bottom: 1px solid #403a36;
+        width: 100%;
+    }
+
+    .footer_menus ul{
+        border-bottom: 1px solid #403a36;
+        width: 100%;
+    }
+
+    .footer_menus .footer_menu_ttl{
+        display: block;
+        position: relative;
+    }
+    .footer_menus ul li{
+        display: none;
+        color: #fff;
+        background: #554c46;
+        font-size: 12px;
+        line-height: 50px;
+        text-indent: 10px;
+    }
+
+    .footer_menus .footer_menu_ttl~li{
+        background: #645952;
+        color: #e6dbd3;
+        display: none;
+        font-size: 14px;
+        line-height: 40px;
+        text-indent: 10px;
+    }
+
+    .footer_arrow_down{
+        background: url('https://image.istarbucks.co.kr/common/img/footer/mobile_footer_arrow_down.png') no-repeat;
+        background-size: 20px auto;
+        display: block;
+        height: 11px;
+        margin-top: -5px;
+        right: 10px;
+        position: absolute;
+        top: 50%;
+        width: 20px;
+    }
+
+    .footer_arrow_up{
+        background: url('https://image.istarbucks.co.kr/common/img/footer/mobile_footer_arrow_up.png') no-repeat;
+        background-size: 20px auto;
+        display: block;
+        height: 11px;
+        margin-top: -5px;
+        right: 10px;
+        position: absolute;
+        top: 50%;
+        width: 20px;
+    }
+
+    .footer_util_btn ul{
+        width: 90%;
+        margin: 25px auto 0;
+        text-align: center;
+    }
+
+    .footer_util_btn ul::after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    .footer_util_btn ul li{
+        display: inline-block;
+        float: none;
+        width: 31%;
+        color: #ffffff;
+        font-size: 14px;
+        font-family: 'Arial';
+        border: 2px solid #ffffff;
+        border-radius: 3px;
+        text-align: center;
+        padding: 2% 3%;
+    }
+
+    .footer_awards_wrap_inner{
+        height: 64px;
+        margin-left: -300px;
+        top: 8px;
+        width: 600px;
+    }
+
+
+    .footer_slider_controller{
+        bottom: 3px;
+        height: 12px;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        z-index: 14;
+    }
+
+    .copyright a{
+        border-right: 1px solid #393939;
+        color: #ccc;
+        display: inline-block;
+        font-size: 11px;
+        padding: 0 10px;
+    }
+
+    .copyright .last{
+        border-right: 0;
+    }
+
+    .copyright .btned_link{
+        background: none;
+        border: 2px solid #fff;
+        border-radius: 3px;
+        color: #fff;
+        display: inline-block;
+        font-size: 11px;
+        margin: 10px 2px 0 3px;
+        width: 70px;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 10px;
+    }
+
+    .copy_menu li{
+        display: block;
+    }
+}
+/* footer 부분 미디어쿼리 END*/
